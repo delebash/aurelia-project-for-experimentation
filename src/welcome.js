@@ -1,7 +1,5 @@
 //import {computedFrom} from 'aurelia-framework';
-// import regeneratorRuntime from 'regenerator-runtime';
-// //add es2017 generators
-// window.regeneratorRuntime = regeneratorRuntime;
+
 
 export class Welcome {
   heading = 'Welcome to the Aurelia Navigation App!';
@@ -19,34 +17,13 @@ export class Welcome {
   }
 
   submit() {
-  let genObj = this.genFunc();
- genObj.next()
-  this.hello()
+    this.previousValue = this.fullName;
   }
 
   canDeactivate() {
     if (this.fullName !== this.previousValue) {
       return confirm('Are you sure you want to leave?');
     }
-  }
-
-  // // fake asynchronise operation
-  fakeop(ms) {
-    return new Promise(r => setTimeout(r, ms));
-  }
-  wait(ms) {
-    return new Promise(r => setTimeout(r, ms));
-  }
-
-  async  hello() {
-    await this.fakeop(1000);
-    console.log('Async success')
-  }
-
-  * genFunc() {
-    console.log('First Generator');
-    yield; // (A)
-    console.log('Second Generator'); // (B)
   }
 }
 
