@@ -33,5 +33,12 @@ export default [
       moduleId: 'viewmodels/errorhandlertest',
       nav: true,
       title: 'Error Handler Test'
-    }
+    },
+  {
+    route: 'viewmodels/es2017tests',
+    name: 'viewmodels/es2017tests',
+    moduleId: 'viewmodels/es2017tests',
+    nav: true,
+    title: 'ES2017 Tests'
+  }
   ];
