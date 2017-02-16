@@ -1,0 +1,17 @@
+<template>
+  <require from="nav-bar.html"></require>
+  <require from="sass/index.css"></require>
+  <require from="css/bootswatch.paper/bootswatch.paper.min.css"></require>
+  <require from="css/bootswatch.paper/fonts.css"></require>
+  <require from="font-awesome/font-awesome.css"></require>
+  <require from="ej/Content/ej/web/ej.widgets.core.bootstrap.min.css"></require>
+  <require from="ej/Content/ej/web/bootstrap-theme/ej.theme.min.css"></require>
+  <require from="ej/Content/ej/web/responsive-css/ej.responsive.css"></require>
+  <require from="ej/Content/ej/web/responsive-css/ejgrid.responsive.css"></require>
+
+  <nav-bar router.bind="router"></nav-bar>
+
+  <div class="page-host">
+    <router-view></router-view>
+  </div>
+</template>
