@@ -16,12 +16,12 @@ export class ES2017Tests{
 
   async  asynctest() {
     await this.fakeop(1000);
-    console.log('Async success')
+    alert('Async success')
   }
 
   * genfunc() {
     console.log('First Generator');
     yield; // (A)
-    console.log('Second Generator'); // (B)
+    alert('Second Generator'); // (B)
   }
 }
