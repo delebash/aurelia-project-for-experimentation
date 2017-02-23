@@ -1,4 +1,4 @@
-<template bindable="router">
+<template>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#skeleton-navigation-navbar-collapse">
@@ -21,6 +21,8 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" click.delegate="login()"><span class="glyphicon in"></span> Login</a></li>
+        <li><a href="#" click.delegate="logout()"><span class="glyphicon glyphicon-log-out"></span>Logot</a></li>
         <li class="loader" if.bind="router.isNavigating">
           <i class="fa fa-spinner fa-spin fa-2x"></i>
         </li>

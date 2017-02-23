@@ -181,7 +181,7 @@
     ],
     "copyFiles": {
       "../node_modules/font-awesome/fonts/**/*": "../dist/fonts",
-      "../node_modules/bootstrap/dist/fonts/**/*": "../dist/fonts",
+      "../node_modules/bootstrap/dist/fonts/**/*": "../dist/css/fonts",
       "./assets/**/*": "../dist",
       "../node_modules/jquery/dist/jquery.min.js": "../dist/vendor",
       "../node_modules/jquery.easing/jquery.easing.min.js": "../dist/vendor",
