@@ -12,12 +12,14 @@ import {CLIOptions} from 'aurelia-cli';
 
 export default gulp.series(
   readProjectConfiguration,
+  clean,
   gulp.parallel(
     transpile,
     processMarkup,
     processSASS,
     processCSS
   ),
+
   writeBundles,
   dist,
   copyResorces

@@ -8,9 +8,7 @@ import {configureResources} from './resources';
 import {LogManager} from 'aurelia-framework';
 import {CustomLogAppender} from '../services/logger';
 import {UndandledErrorHandler} from "../services/errorhandler"
-
-
-import ejGrid from 'ej.grid';
+//import ej from 'ej'
 
 LogManager.addAppender(new CustomLogAppender());
 
@@ -40,7 +38,7 @@ export class Startup {
   init(aurelia) {
 
     //Load error handler
-   // UndandledErrorHandler.init()
+    //  UndandledErrorHandler.init()
 
 
     let t = this;

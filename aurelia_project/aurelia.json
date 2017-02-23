@@ -79,7 +79,7 @@
     ],
     "loader": {
       "type": "require",
-      "configTarget": "vendor-bundle.js",
+      "configTarget": "aurelia-bundle.js",
       "includeBundleMetadataInConfig": "auto",
       "plugins": [
         {
@@ -105,7 +105,7 @@
         ]
       },
       {
-        "name": "vendor-bundle.js",
+        "name": "aurelia-bundle.js",
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
           "node_modules/whatwg-fetch/fetch.js",
@@ -137,17 +137,6 @@
           "aurelia-fetch-client",
           "aurelia-api",
           "extend",
-          "jquery",
-          {
-            "name": "jquery.easing",
-            "path": "../node_modules/jquery-easing/dist",
-            "main": "jquery.easing.1.3.umd.min.js"
-          },
-          {
-            "name": "jsrender",
-            "path": "../node_modules/jsrender",
-            "main": "jsrender.min.js"
-          },
           {
             "name": "aurelia-authentication",
             "path": "../node_modules/aurelia-authentication/dist/amd",
@@ -166,148 +155,9 @@
             ]
           },
           {
-            "name": "ej",
-            "path": "../node_modules/syncfusion-javascript",
-            "main": "Scripts/ej/common/ej.core.min",
-            "deps": [
-              "jquery"
-            ],
-            "resources": [
-              "Content/ej/web/ej.widgets.core.bootstrap.min.css",
-              "Content/ej/web/bootstrap-theme/ej.theme.min.css",
-              "Content/ej/web/responsive-css/ej.responsive.css",
-              "Content/ej/web/responsive-css/ejgrid.responsive.css"
-            ],
-            "exports": "ej"
-          },
-          {
-            "name": "ej.data",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "common/ej.data.min"
-          },
-          {
-            "name": "ej.touch",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "common/ej.touch.min"
-          },
-          {
-            "name": "ej.print",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.print.min"
-          },
-          {
-            "name": "ej.globalize",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "common/ej.globalize.min"
-          },
-          {
-            "name": "ej.draggable",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "common/ej.draggable.min"
-          },
-          {
-            "name": "ej.unobtrusive",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "common/ej.unobtrusive.min"
-          },
-          {
-            "name": "ej.pager",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.pager.min"
-          },
-          {
-            "name": "ej.scroller",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "common/ej.scroller.min"
-          },
-          {
-            "name": "ej.waitingpopup",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.waitingpopup.min"
-          },
-          {
-            "name": "ej.dropdownlist",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.dropdownlist.min"
-          },
-          {
-            "name": "ej.dialog",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.dialog.min"
-          },
-          {
-            "name": "ej.button",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.button.min"
-          },
-          {
-            "name": "ej.autocomplete",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.autocomplete.min"
-          },
-          {
-            "name": "ej.datepicker",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.datepicker.min"
-          },
-          {
-            "name": "ej.timepicker",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.timepicker.min"
-          },
-          {
-            "name": "ej.datetimepicker",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.datetimepicker.min"
-          },
-          {
-            "name": "ej.checkbox",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.checkbox.min"
-          },
-          {
-            "name": "ej.editor",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.editor.min"
-          },
-          {
-            "name": "ej.tooltip",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.tooltip.min"
-          },
-          {
-            "name": "ej.toolbar",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.toolbar.min"
-          },
-          {
-            "name": "ej.menu",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.menu.min"
-          },
-          {
-            "name": "ej.radiobutton",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.radiobutton.min"
-          },
-          {
-            "name": "ej.excelfilter",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.excelfilter.min"
-          },
-          {
-            "name": "ej.grid",
-            "path": "../node_modules/syncfusion-javascript/Scripts/ej",
-            "main": "web/ej.grid.min",
-            "exports": "ejGrid"
-          },
-          {
             "name": "bootstrap",
             "path": "../node_modules/bootstrap/dist",
             "main": "js/bootstrap.min",
-            "deps": [
-              "jquery"
-            ],
             "exports": "$"
           },
           {
@@ -332,9 +182,11 @@
     "copyFiles": {
       "../node_modules/font-awesome/fonts/**/*": "../dist/fonts",
       "../node_modules/bootstrap/dist/fonts/**/*": "../dist/fonts",
-      "./assets/**/*": "../dist/",
-      "../node_modules/syncfusion-javascript/Content/ej/web/common-images/**/*": "../dist/common-images",
-      "../node_modules/syncfusion-javascript/Content/ej/web/bootstrap-theme/images/**/*": "../dist/images"
+      "./assets/**/*": "../dist",
+      "../node_modules/jquery/dist/jquery.min.js": "../dist/vendor",
+      "../node_modules/jquery.easing/jquery.easing.min.js": "../dist/vendor",
+      "../node_modules/jsrender/jsrender.min.js": "../dist/vendor",
+      "../vendor/**/*": "../dist/vendor"
     }
   }
 }
