@@ -23,7 +23,6 @@
     "jquery.easing": "^1.4.1",
     "jsrender": "^0.9.83",
     "jwt-decode": "^2.1.0",
-    "regenerator-runtime": "^0.10.1",
     "requirejs": "^2.3.2",
     "syncfusion-javascript": "^15.1.33",
     "text": "github:requirejs/text#latest",
