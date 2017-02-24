@@ -1,4 +1,3 @@
-import {inject} from 'aurelia-framework';
 import routes from './config/config.routes'
 
 // Load routes from /config/config.routes

@@ -1,12 +1,13 @@
 import {inject} from 'aurelia-framework';
-import {DreamFactoryAdapter} from '../services/syncfusion-dreamfactory-adapter';
-import {AurelaiAuthDreamfactory} from '../services/aurelia-auth-dreamfactory'
+import {DreamFactoryAdaptor} from '../services/syncfusion-dreamfactory-adaptor';
+import {AuthenticationService} from '../services/auth-service'
 import dfconfig from '../config/dreamfactory-config'
 
-@inject(AurelaiAuthDreamfactory)
+@inject(AuthenticationService,DreamFactoryAdaptor)
 export class GridQuery {
-  constructor(authservice) {
+  constructor(authservice, adaptor) {
     this.authservice = authservice
+    this.adaptor = adaptor
   }
 
   attached() {
@@ -19,12 +20,11 @@ export class GridQuery {
 
   getdata() {
     //requestType = "get" -- request uses query string params via get, "json" -- request uses post to send an object
-    var adapterOptions = {requestType: "get"}; //defaults to "get" if not specified
+    let adaptorOptions = {requestType: "get"}; //defaults to "get" if not specified
 
-    let adapter = new DreamFactoryAdapter;
     let dataManager = ej.DataManager({
       url: "https://api.ageektech.com/api/v2/northwind/_table/",
-      adaptor: new adapter.syncfusionDreamFactoryAdapter(adapterOptions),
+      adaptor: new this.adaptor.syncfusionDreamFactoryAdaptor(adaptorOptions),
       headers: [{
         "X-DreamFactory-Application-Name": dfconfig.APP_NAME,
         "X-DreamFactory-API-Key": dfconfig.APP_API_KEY,

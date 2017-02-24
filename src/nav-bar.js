@@ -1,7 +1,7 @@
 import {inject,bindable} from 'aurelia-framework';
-import {AurelaiAuthDreamfactory} from './services/aurelia-auth-dreamfactory'
+import {AuthenticationService} from './services/auth-service'
 
-@inject(AurelaiAuthDreamfactory)
+@inject(AuthenticationService)
 export class NavBar {
   @bindable router = null;
   constructor(authservice) {
@@ -14,7 +14,6 @@ export class NavBar {
     console.log('logged out')
   }
   async login() {
-    //this.authenticated = this.authservice.authenticated;
     let loggedin = ""
     try {
       if (this.authservice.authenticated === false) {
