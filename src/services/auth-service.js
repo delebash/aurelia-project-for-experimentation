@@ -13,10 +13,10 @@ export class AuthenticationService {
 
   async login() {
     try {
-      let response = await  this.authservice.login(dfconfig.credentials());
-      this.username = response.name;
-      return true;
-
+      let response = await this.authservice.login(dfconfig.credentials());
+      if (response.session_id) {
+        return true;
+      }
     } catch (error) {
       console.error(error);
       return false;
@@ -25,7 +25,7 @@ export class AuthenticationService {
 
   // make a getter to get the authentication status.
   // use computedFrom to avoid dirty checking
-  @computedFrom('authService.authenticated')
+  @computedFrom('authservice.authenticated')
   get authenticated() {
     return this.authservice.authenticated;
   }

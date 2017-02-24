@@ -9,15 +9,14 @@ export class NavBar {
     this.authservice = authservice
   }
 
-  logout() {
-    this.authservice.logout();
+  async logout() {
+    let loggedout = await this.authservice.logout();
     console.log('logged out')
   }
   async login() {
-    let loggedin = ""
     try {
       if (this.authservice.authenticated === false) {
-        loggedin = await this.authservice.login();
+        let loggedin = await this.authservice.login();
         if (loggedin = true) {
           console.log('logged in')
         }
