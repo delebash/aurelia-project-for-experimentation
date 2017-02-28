@@ -11,12 +11,29 @@ export function configurePlugins(aurelia, globalConfig) {
 
     aurelia.use
       .plugin('aurelia-api', config => {
-        config.registerEndpoint('auth',dfconfig.loginurl() );
+        config.registerEndpoint('auth',dfconfig.loginurl()
+        );
+        // config
+        //   .registerEndpoint('auth',configure => {
+        //     configure.withBaseUrl(dfconfig.loginurl());
+        //     configure.withInterceptor({
+        //       request(request) {
+        //         console.log(`Requesting ${request.method} ${request.url}`);
+        //         return request;
+        //       },
+        //       response(response) {
+        //         console.log(`Received ${response.status} ${response.url}`);
+        //         return response;
+        //       }
+        //     });
+        //   })
         config.registerEndpoint('api',dfconfig.baseurl(),{headers: {"X-DreamFactory-API-Key": dfconfig.APP_API_KEY, "X-DreamFactory-Application-Name": dfconfig.APP_NAME}});
+
       })
       .plugin('aurelia-authentication', baseConfig => {
         baseConfig.configure(authconfig);
       });
+
         // .plugin('aurelia-validation')
         // .plugin('aurelia-i18n', instance => {
         //     instance.i18next.use(Backend);

@@ -12,6 +12,9 @@ export class CustomLogAppender {
     console.warn(`WARN [${logger.id}] ${message}`, ...rest);
   }
   error(logger, message, ...rest){
+    if (typeof message === 'object'){
+      console.log(message)
+    }
     console.error(`ERROR [${logger.id}] ${message}`, ...rest);
   }
 }

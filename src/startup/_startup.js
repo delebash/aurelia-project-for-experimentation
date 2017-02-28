@@ -8,6 +8,8 @@ import {configureResources} from './resources';
 import {LogManager} from 'aurelia-framework';
 import {CustomLogAppender} from '../services/logger';
 import {UndandledErrorHandler} from "../services/errorhandler"
+
+
 //import ej from 'ej'
 
 LogManager.addAppender(new CustomLogAppender());
@@ -31,6 +33,7 @@ export class Startup {
   //#endregion
 
   constructor() {
+
   }
 
   //#region Init+Start
@@ -38,8 +41,7 @@ export class Startup {
   init(aurelia) {
 
     //Load error handler
-    //  UndandledErrorHandler.init()
-
+      UndandledErrorHandler.init()
 
     let t = this;
     t.aurelia = aurelia;
@@ -62,7 +64,7 @@ export class Startup {
 
     // UndandledErrorHandler.errorhandler();
 
-    aurelia.start().then(() => aurelia.setRoot());
+    aurelia.start().then(() => aurelia.setRoot('layouts/layout-main'));
   }
 }
 

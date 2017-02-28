@@ -1,50 +1,41 @@
 export class UndandledErrorHandler {
   static init() {
-    window.addEventListener('unhandledrejection', event => {
+    window.addEventListener('unhandledrejection', e => {
       // Prevent error output on the console:
       event.preventDefault();
-      console.log('Reason: ' + event.reason);
+      let reason = e.detail.reason;
+      let promise = e.detail.promise;
+      let stack = event.detail.reason.stack;
+      //let msg = JSON.parse(e.detail.reason.message)
+      console.log(e.detail.reason.message)
     });
-    window.addEventListener('error', function (e) {
-      event.preventDefault();
-      var error = e.error;
-      document.write ("Message : " + error.msg );
-      document.write ("url : " + error.url );
-      document.write ("Line number : " + error.line );
-      // console.log("test" + error);
+    // NOTE: event name is all lower case as per DOM convention
+    window.addEventListener("rejectionhandled",  e => {
+      // NOTE: e.preventDefault() must be manually called prevent the default
+      // action which is currently unset (but might be set to something in the future)
+      e.preventDefault();
+      // NOTE: parameters are properties of the event detail property
+      let reason = e.detail.reason;
+      let promise = e.detail.promise;
+      // See Promise.onUnhandledRejectionHandled for parameter documentation
     });
+
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      let string = msg.toLowerCase();
+      let substring = "script error";
+      if (string.indexOf(substring) > -1) {
+        alert('Script Error: See Browser Console for Detail');
+      } else {
+        let message = [
+          'Message: ' + msg,
+          'URL: ' + url,
+          'Line: ' + lineNo,
+          'Column: ' + columnNo,
+          'Error object: ' + JSON.stringify(error)
+        ].join(' - ');
+        alert(message);
+      }
+      return false;
+    };
   }
 }
-
-
-//  window.onerror = function (msg, url, lineNo, columnNo, error) {
-//    var string = msg.toLowerCase();
-//    var substring = "script error";
-//    if (string.indexOf(substring) > -1){
-//      alert('Script Error: See Browser Console for Detail');
-//    } else {
-//      var message = [
-//        'Message: ' + msg,
-//        'URL: ' + url,
-//        'Line: ' + lineNo,
-//        'Column: ' + columnNo,
-//        'Error object: ' + JSON.stringify(error)
-//      ].join(' - ');
-//
-//      alert(message);
-//    }
-//
-//    return false;
-//  };
-
-
-// window.addEventListener('error', function (e) {
-//   var stack = e.error.stack;
-//   var message = e.error.toString();
-//   if (stack) {
-//     message += '\n' + stack;
-//   }
-//   var xhr = new XMLHttpRequest();
-//   xhr.open('POST', '/log', true);
-//   xhr.send(message);
-// });

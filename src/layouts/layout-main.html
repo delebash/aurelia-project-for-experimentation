@@ -1,0 +1,19 @@
+<template>
+        <main id="main" class="${sidebarHiddenClass}">
+          <require from="sass/index.css"></require>
+          <require from="css/bootswatch.paper/bootswatch.paper.min.css"></require>
+          <require from="css/bootswatch.paper/fonts.css"></require>
+          <require from="font-awesome/font-awesome.css"></require>
+
+          <sidebar router.bind="router" menus.bind="menus"></sidebar>
+
+            <topbar router.bind="router"></topbar>
+
+            <div id="router-view">
+                <router-view></router-view>
+            </div>
+
+        </main>
+
+
+</template>

@@ -5,7 +5,6 @@ import {AuthenticationService} from './services/auth-service'
 export class NavBar {
   @bindable router = null;
   constructor(authservice) {
-
     this.authservice = authservice
   }
 
@@ -14,15 +13,17 @@ export class NavBar {
     console.log('logged out')
   }
   async login() {
+
     try {
       if (this.authservice.authenticated === false) {
         let loggedin = await this.authservice.login();
-        if (loggedin = true) {
+        if (loggedin === true) {
           console.log('logged in')
         }
       }
     } catch (error) {
-      console.error(error);
+      throw new Error(error.message);
+
     }
   }
 }
